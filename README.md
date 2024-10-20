@@ -40,7 +40,8 @@ Data Sources
 
 * Coefficient of dependency on fertility rate: **-0.0146**
 * Coefficient of dependency on migration rate: **0.0235**
-* **Migration rate has a larger impact on population growth than fertility rate.**
+
+### **Migration rate has a larger impact on population growth than fertility rate.**
 
 1. Migration is a stronger factor influencing U.S. population growth than fertility, as shown by the larger positive coefficient for migration (0.0235) compared to the negative fertility coefficient (-0.0146).
 2. This reflects the reality that immigration has played a crucial role in maintaining and increasing the U.S. population, while fertility rates have been declining and are currently below the replacement level.
