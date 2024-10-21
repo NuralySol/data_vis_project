@@ -6,12 +6,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Load the population data
 df_population = pd.read_csv("./fixtures/Formatted_Yearly_Population.csv")
 
-# first rows of the head to check the data
+# Display the first few rows to check the data
 print(df_population.head())
 
-
+# Convert 'total_population' to float
 df_population["total_population"] = df_population["total_population"].astype(float)
 
 # Split the data into train and test sets and Features
@@ -30,7 +31,7 @@ X_test_scaled = scaler.transform(X_test)
 linreg = LinearRegression()
 linreg.fit(X_train_scaled, y_train)
 
-
+# Predict on the test set
 y_pred = linreg.predict(X_test_scaled)
 
 # Prediction up to year 2040
@@ -38,42 +39,62 @@ future_years = np.array([[year] for year in range(2021, 2041)])
 future_years_scaled = scaler.transform(future_years)
 future_population_pred = linreg.predict(future_years_scaled)
 
-plt.figure(figsize=(10, 8))
+# Plot the actual data, test predictions, and future projections
+plt.figure(figsize=(12, 8))
+
+# Scatter plot for the actual data
 plt.scatter(
     df_population["year"],
     df_population["total_population"],
     color="blue",
     label="Actual Population",
+    s=80,  # Increase point size for better visibility
+    alpha=0.7
 )
 
+# Plot predicted population from the test set
 plt.plot(
     X_test, y_pred, color="red", linewidth=2, label="Predicted Population (Test Set)"
 )
 
+# Plot future population predictions up to 2040
 plt.plot(
     future_years,
     future_population_pred,
     "g--",
     label="Predicted Population (2040)",
     marker="o",
-)
-plt.annotate(
-    "2040 Projection",
-    xy=(2040, future_population_pred[-1]),
-    xytext=(2035, future_population_pred[-1] + 2),
-    arrowprops=dict(facecolor="orange", shrink=0.05, width=1, headwidth=10),
+    markersize=8
 )
 
-plt.title("Population Prediction Up to 2040")
-plt.xlabel("Year")
-plt.ylabel("Total Population (Millions)")
-plt.legend()
+# Annotate the 2040 projection, shifted down with an arrow pointing to the actual point
+plt.annotate(
+    f"2040 Projection: {future_population_pred[-1]:.2f} million",
+    xy=(2040, future_population_pred[-1]),  # Pointing to the actual data point
+    xytext=(2032, future_population_pred[-1] - 15),  # Shifted annotation downward
+    arrowprops=dict(facecolor="orange", arrowstyle="->", lw=2),
+    fontsize=12,
+    bbox=dict(boxstyle="round,pad=0.5", fc="white", ec="orange", lw=1.5)
+)
+
+# Title and labels
+plt.title("Population Prediction Up to 2040", fontsize=18, weight='bold')
+plt.xlabel("Year", fontsize=14)
+plt.ylabel("Total Population (Millions)", fontsize=14)
+plt.legend(fontsize=12)
 plt.grid(True)
+
+# Show the plot
+plt.tight_layout()
 plt.show()
+
+# Display the current and predicted population
 current_population = df_population["total_population"].iloc[-1]
 print(
     f"The current population (most recent data point) is: {current_population:.2f} million"
 )
+
+# Display the 2040 projection
 predicted_population_2040 = future_population_pred[-1]
 print(
     f"The predicted population for the year 2040 is: {predicted_population_2040:.2f} million"
