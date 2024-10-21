@@ -62,14 +62,15 @@ Data Sources
 * The primary source for this Data Visualization project was official U.S. Census data, sourced from Census.gov. This provided the historical and current population trends.
 * Immigration data was obtained from the historical records of the Department of Homeland Security (DHS), which offered valuable insights into migration trends shaping the U.S. population.
 
-## Author
+## 👤 Author: Nuraly Soltonbekov
 
-👤 **Nuraly Soltonbekov**
+* **GitHub**: [@NuralySol](https://github.com/NuralySol)
+  
+I'm always open to questions, feedback, or collaborations. Feel free to reach out!
 
-* GitHub: [@NuralySol](https://github.com/NuralySol)
+---
 
-Feel free to reach out for any questions or collaborations!
+## ⚖️ License
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.  
+For more details, see the [LICENSE](./LICENSE) file.
