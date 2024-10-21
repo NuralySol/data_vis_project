@@ -46,3 +46,8 @@ Data Sources
 1. Migration is a stronger factor influencing U.S. population growth than fertility, as shown by the larger positive coefficient for migration (0.0235) compared to the negative fertility coefficient (-0.0146).
 2. This reflects the reality that immigration has played a crucial role in maintaining and increasing the U.S. population, while fertility rates have been declining and are currently below the replacement level.
 3. The U.S. population would likely grow more slowly or even decline if it relied solely on fertility without migration.
+
+## Sources for the project
+
+* The primary source for this Data Visualization project was official U.S. Census data, sourced from Census.gov. This provided the historical and current population trends.
+* Immigration data was obtained from the historical records of the Department of Homeland Security (DHS), which offered valuable insights into migration trends shaping the U.S. population.
