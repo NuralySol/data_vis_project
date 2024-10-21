@@ -46,6 +46,8 @@ Data Sources
 
 ![Most Likely Projection](assets/Main.png)
 
+---
+
 ### 🔑 Coeficient dependencies
 
 * Coefficient of dependency on fertility rate: **-0.0146**
